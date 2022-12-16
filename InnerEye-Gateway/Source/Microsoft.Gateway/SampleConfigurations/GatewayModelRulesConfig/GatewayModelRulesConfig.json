@@ -1,0 +1,659 @@
+[
+  {
+    "CallingAET": "XXXXXX",
+    "CalledAET": "YYYYY",
+    "AETConfig": {
+      "Config": {
+        "AETConfigType": "Model",
+        "ModelsConfig": [
+          {
+            "ModelId": "Prostate:X",
+            "ChannelConstraints": [
+              {
+                "ChannelID": "ct",
+                "ImageFilter": {
+                  "Constraints": [
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "1.2.840.10008.5.1.4.1.1.2",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 22
+                        },
+                        "discriminator": "UIDStringOrderConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "CT",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 96
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "Optional",
+                      "Constraint": {
+                        "Match": "AXIAL",
+                        "Ordinal": -1,
+                        "Index": {
+                          "Group": 8,
+                          "Element": 8
+                        },
+                        "discriminator": "StringContainsConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    }
+                  ],
+                  "Op": "And",
+                  "discriminator": "GroupConstraint"
+                },
+                "ChannelConstraints": {
+                  "Constraints": [
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "1.2.840.10008.5.1.4.1.1.2",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 22
+                        },
+                        "discriminator": "UIDStringOrderConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "CT",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 96
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "GreaterThanOrEqual",
+                          "Value": 512,
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 16
+                        },
+                        "discriminator": "OrderedIntConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "GreaterThanOrEqual",
+                          "Value": 512,
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 16
+                        },
+                        "discriminator": "OrderedIntConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentCanBeEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "HFS",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 24,
+                          "Element": 20736
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "LessThanOrEqual",
+                          "Value": 2.0,
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 48
+                        },
+                        "discriminator": "OrderedDoubleConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "LessThanOrEqual",
+                          "Value": 2.0,
+                          "Ordinal": 1
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 48
+                        },
+                        "discriminator": "OrderedDoubleConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "PELVIS",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 24,
+                          "Element": 21
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "M",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 16,
+                          "Element": 64
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentCanBeEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "NotEqual",
+                          "Value": {
+                            "Value": "CJ",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 144
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    }
+                  ],
+                  "Op": "And",
+                  "discriminator": "GroupConstraint"
+                },
+                "MinChannelImages": 50,
+                "MaxChannelImages": 1000
+              }
+            ],
+            "TagReplacements": [
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 8,
+                  "Element": 4158
+                },
+                "Value": "OSAIRIS - REVIEW BEFORE CLINICAL USE"
+              },
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 12294,
+                  "Element": 2
+                },
+                "Value": "OSAIRIS"
+              },
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 12294,
+                  "Element": 4
+                },
+                "Value": "REVIEW BEFORE CLINICAL USE"
+              },
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 8,
+                  "Element": 112
+                },
+                "Value": "Microsoft Corporation"
+              },
+              {
+                "Operation": "AppendIfExists",
+                "DicomTagIndex": {
+                  "Group": 12294,
+                  "Element": 38
+                },
+                "Value": " REVIEW BEFORE CLINICAL USE"
+              }
+            ]
+          },
+          {
+            "ModelId": "HeadAndNeck:X",
+            "ChannelConstraints": [
+              {
+                "ChannelID": "ct",
+                "ImageFilter": {
+                  "Constraints": [
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "1.2.840.10008.5.1.4.1.1.2",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 22
+                        },
+                        "discriminator": "UIDStringOrderConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "CT",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 96
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "Optional",
+                      "Constraint": {
+                        "Match": "AXIAL",
+                        "Ordinal": -1,
+                        "Index": {
+                          "Group": 8,
+                          "Element": 8
+                        },
+                        "discriminator": "StringContainsConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    }
+                  ],
+                  "Op": "And",
+                  "discriminator": "GroupConstraint"
+                },
+                "ChannelConstraints": {
+                  "Constraints": [
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "1.2.840.10008.5.1.4.1.1.2",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 22
+                        },
+                        "discriminator": "UIDStringOrderConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "CT",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 96
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "GreaterThanOrEqual",
+                          "Value": 512,
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 16
+                        },
+                        "discriminator": "OrderedIntConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "GreaterThanOrEqual",
+                          "Value": 512,
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 16
+                        },
+                        "discriminator": "OrderedIntConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentCanBeEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "HFS",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 24,
+                          "Element": 20736
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "LessThanOrEqual",
+                          "Value": 2.0,
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 48
+                        },
+                        "discriminator": "OrderedDoubleConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "PresentNotEmpty",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "LessThanOrEqual",
+                          "Value": 2.0,
+                          "Ordinal": 1
+                        },
+                        "Index": {
+                          "Group": 40,
+                          "Element": 48
+                        },
+                        "discriminator": "OrderedDoubleConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "Optional",
+                      "Constraint": {
+                        "Function": {
+                          "Order": "Equal",
+                          "Value": {
+                            "Value": "HEAD",
+                            "ComparisonType": 0
+                          },
+                          "Ordinal": 0
+                        },
+                        "Index": {
+                          "Group": 24,
+                          "Element": 21
+                        },
+                        "discriminator": "OrderedStringConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    },
+                    {
+                      "RequirementLevel": "Optional",
+                      "Constraint": {
+                        "Group": {
+                          "Constraints": [
+                            {
+                              "Function": {
+                                "Order": "Equal",
+                                "Value": {
+                                  "Value": "RJB",
+                                  "ComparisonType": 0
+                                },
+                                "Ordinal": 0
+                              },
+                              "Index": {
+                                "Group": 8,
+                                "Element": 144
+                              },
+                              "discriminator": "OrderedStringConstraint"
+                            },
+                            {
+                              "Function": {
+                                "Order": "Equal",
+                                "Value": {
+                                  "Value": "RJ",
+                                  "ComparisonType": 0
+                                },
+                                "Ordinal": 0
+                              },
+                              "Index": {
+                                "Group": 8,
+                                "Element": 144
+                              },
+                              "discriminator": "OrderedStringConstraint"
+                            },
+                            {
+                              "Function": {
+                                "Order": "Equal",
+                                "Value": {
+                                  "Value": "SJJ",
+                                  "ComparisonType": 0
+                                },
+                                "Ordinal": 0
+                              },
+                              "Index": {
+                                "Group": 8,
+                                "Element": 144
+                              },
+                              "discriminator": "OrderedStringConstraint"
+                            },
+                            {
+                              "Function": {
+                                "Order": "Equal",
+                                "Value": {
+                                  "Value": "GCB",
+                                  "ComparisonType": 0
+                                },
+                                "Ordinal": 0
+                              },
+                              "Index": {
+                                "Group": 8,
+                                "Element": 144
+                              },
+                              "discriminator": "OrderedStringConstraint"
+                            },
+                            {
+                              "Function": {
+                                "Order": "Equal",
+                                "Value": {
+                                  "Value": "GD",
+                                  "ComparisonType": 0
+                                },
+                                "Ordinal": 0
+                              },
+                              "Index": {
+                                "Group": 8,
+                                "Element": 144
+                              },
+                              "discriminator": "OrderedStringConstraint"
+                            }
+                          ],
+                          "Op": "Or",
+                          "discriminator": "GroupConstraint"
+                        },
+                        "Index": {
+                          "Group": 8,
+                          "Element": 144
+                        },
+                        "discriminator": "GroupTagConstraint"
+                      },
+                      "discriminator": "RequiredTagConstraint"
+                    }
+                  ],
+                  "Op": "And",
+                  "discriminator": "GroupConstraint"
+                },
+                "MinChannelImages": 50,
+                "MaxChannelImages": 1000
+              }
+            ],
+            "TagReplacements": [
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 8,
+                  "Element": 4158
+                },
+                "Value": "OSAIRIS - REVIEW BEFORE CLINICAL USE"
+              },
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 12294,
+                  "Element": 2
+                },
+                "Value": "OSAIRIS"
+              },
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 12294,
+                  "Element": 4
+                },
+                "Value": "REVIEW BEFORE CLINICAL USE"
+              },
+              {
+                "Operation": "UpdateIfExists",
+                "DicomTagIndex": {
+                  "Group": 8,
+                  "Element": 112
+                },
+                "Value": "Microsoft Corporation"
+              },
+              {
+                "Operation": "AppendIfExists",
+                "DicomTagIndex": {
+                  "Group": 12294,
+                  "Element": 38
+                },
+                "Value": " REVIEW BEFORE CLINICAL USE"
+              }
+            ]
+          }
+        ]
+      },
+      "Destination": {
+        "Title": "ZZZZZZ",
+        "Port": 104,
+        "Ip": "XX.XX.XX.XX"
+      },
+      "ShouldReturnImage": false
+    }
+  }
+]
