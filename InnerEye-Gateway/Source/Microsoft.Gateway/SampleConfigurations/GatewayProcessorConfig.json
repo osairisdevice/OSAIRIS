@@ -1,78 +1,22 @@
 {
   "ServiceSettings": {
-    "RunAsConsole": true
+    "RunAsConsole": false
   },
   "ProcessorSettings": {
     "LicenseKeyEnvVar": "INNEREYE_INFERENCE_DEV_KEY",
-    "InferenceUri": "https://innereyeinferencedev.azurewebsites.net"
+    "InferenceUri": "https://inf-app-ineyerad-uks-gp-net.azurewebsites.net"
   },
   "DequeueServiceConfig": {
-    "MaximumQueueMessageAgeSeconds": 100.0,
-    "DeadLetterMoveFrequencySeconds": 1.0
+    "MaximumQueueMessageAgeSeconds": 60480.0,
+    "DeadLetterMoveFrequencySeconds": 1800.0
   },
   "DownloadServiceConfig": {
     "DownloadRetryTimespanInSeconds": 5.0,
     "DownloadWaitTimeoutInSeconds": 3600.0
   },
   "ConfigurationServiceConfig": {
-    "ConfigCreationDateTime": "2020-05-31T20:14:51",
-    "ApplyConfigDateTime": "2020-05-31T20:14:51",
+    "ConfigCreationDateTime": "2021-02-21T20:53:16.7018602Z",
+    "ApplyConfigDateTime": "2021-02-21T20:53:16.7018602Z",
     "ConfigurationRefreshDelaySeconds": 60.0
-  },
-
-  "AnonymisationSettings": {
-    "DicomTagsAnonymisationConfig": {
-      "Keep": [
-        "PatientPosition",
-        "Columns",
-        "Rows",
-        "PixelSpacing",
-        "ImagePositionPatient",
-        "ImageOrientationPatient",
-        "SliceLocation",
-        "Modality",
-        "ModalityLUTSequence",
-        "BodyPartExamined",
-        "HighBit",
-        "BitsStored",
-        "BitsAllocated",
-        "SamplesPerPixel",
-        "PixelData",
-        "PhotometricInterpretation",
-        "PixelRepresentation",
-        "RescaleIntercept",
-        "RescaleSlope",
-        "ImageType",
-        "SOPClassUID",
-        "RTReferencedStudySequence",
-        "ReferencedROINumber",
-        "ROIDisplayColor",
-        "ContourSequence",
-        "ROIContourSequence",
-        "ReferencedSOPClassUID",
-        "NumberOfContourPoints",
-        "ContourData",
-        "ContourGeometricType",
-        "ContourImageSequence",
-        "ObservationNumber",
-        "RTReferencedSeriesSequence",
-        "ReferencedFrameOfReferenceSequence",
-        "ROINumber",
-        "ROIName"
-      ],
-      "Hash": [
-        "SeriesInstanceUID",
-        "StudyInstanceUID",
-        "SOPInstanceUID",
-        "FrameOfReferenceUID",
-        "ReferencedSOPInstanceUID",
-        "RTROIObservationsSequence",
-        "StructureSetLabel",
-        "StructureSetName",
-        "ReferencedFrameOfReferenceUID",
-        "ROIGenerationAlgorithm",
-        "StructureSetROISequence"
-      ]
-    }
   }
 }
