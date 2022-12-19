@@ -1,10 +1,16 @@
 # Introduction
 
-InnerEye-Inference is a AppService webapp in python to run inference on medical imaging models trained with the [InnerEye-DeepLearning toolkit](https://github.com/microsoft/InnerEye-Inference).
+InnerEye-Inference is an App Service webapp in python to run inference on medical imaging models trained with the [InnerEye-DeepLearning toolkit](https://github.com/microsoft/InnerEye-Inference).
 
-You can also integrate this with DICOM using the  [InnerEye-Gateway](https://github.com/microsoft/InnerEye-Gateway)
+You can also integrate this with DICOM using the [InnerEye-Gateway](https://github.com/microsoft/InnerEye-Gateway).
 
 ## Getting Started
+
+### Operating System
+
+If developing or using this tool locally, we highly recommend using [Ubuntu 20.04](https://releases.ubuntu.com/20.04/) as your operating system. This is as the Azure App Service base image will be Ubuntu. By developing locally in Ubuntu you can guarantee maximum repeatibility between local and cloud behaviour.
+
+For windows users this is easily done through [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ### Installing Conda or Miniconda
 
@@ -15,26 +21,22 @@ and run it.
 
 Note that in order to create the Conda environment you will need to have build tools installed on your machine. If you are running Windows, they should be already installed with Conda distribution.
 
-You can install build tools on Ubuntu (and Debian-based distributions) by running
-`sudo apt-get install build-essential`.
-If you are running CentOS/RHEL distributions, you can install the build tools by running
-`yum install gcc gcc-c++ kernel-devel make`.
+You can install build tools on Ubuntu (and Debian-based distributions) by running:
 
-#### Linux Users
+```shell
+sudo apt-get install build-essential
+```
 
-Start the `conda` prompt for your platform. In that prompt, navigate to your repository root and run
+If you are running CentOS/RHEL distributions, you can install the build tools by running:
+
+```shell
+yum install gcc gcc-c++ kernel-devel make
+```
+
+Start the `conda` prompt for your platform. In that prompt, navigate to your repository root and run:
 
 ```console
 conda env create --file environment.yml
-conda activate inference
-```
-
-#### Windows Users
-
-Start the `conda` prompt for your platform. In that prompt, navigate to your repository root and run
-
-```console
-conda env create --file environment_win.yml
 conda activate inference
 ```
 
@@ -61,7 +63,7 @@ Run with `source set_environment.sh`
 
 ### Running flask app locally
 
-* `flask run` to test it locally
+- `flask run` to test it locally
 
 ### Testing flask app locally
 
@@ -160,30 +162,23 @@ and download the inference result as a zipped DICOM-RT file to `HN_rt.zip`.
 
 1. Install Azure CLI: `curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`
 2. Login: `az login --use-device-code`
-3. Deploy: `az webapp up --sku S1 --name test-python12345 --subscription <your_subscription_name> -g InnerEyeInference --location <your region>`
+3. Deploy: `az webapp up --sku S1 --name test-python12345 --subscription <your_subscription_name> -g InnerEyeInference --location <your region> --runtime PYTHON:3.7`
 4. In the Azure portal go to Monitoring > Log Stream for debugging logs
 
 ### Deployment build
 
 If you would like to reproduce the automatic deployment of the service for testing purposes:
 
-* `az ad sp create-for-rbac --name "<name>" --role contributor --scope /subscriptions/<subs>/resourceGroups/InnerEyeInference --sdk-auth`
-* The previous command will return a json object with the content for the variable `secrets.AZURE_CREDENTIALS` .github/workflows/deploy.yml
+- `az ad sp create-for-rbac --name "<name>" --role contributor --scope /subscriptions/<subs>/resourceGroups/InnerEyeInference --sdk-auth`
+- The previous command will return a json object with the content for the variable `secrets.AZURE_CREDENTIALS` .github/workflows/deploy.yml
 
 ## Images
 
 During inference the image data zip file is copied to the IMAGE_DATA_FOLDER in the AzureML workspace's DATASTORE_NAME datastore. At the end of inference the copied image data zip file is overwritten with a simple line of text. At present we cannot delete these. If you would like these overwritten files removed from your datastore you can [add a policy](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-lifecycle-management-concepts?tabs=azure-portal) to delete items from the datastore after a period of time. We recommend 7 days.
 
-## Changing Primary Dependencies
+## Changing Dependencies
 
-1. Make your desired changes in `primary_deps.yml`. Make sure your package name and version are correct.
-2. To create a new environment and a valid `environment.yml`, run the following command:
-
- ```shell
- bash -i create_and_lock_environment.sh
- ```
-
-3. Voila! You will now have a new conda environment with your desired primary package versions, as well as a new `environment.yml` which can be ingested by AzureML to create a copy of your local environment.
+The Azure App Service will use the packages specified in `requirements.txt` to create the python virtual environment in which the flask app is run. The `environment.yml` is used for local environments only. Therefore if you want to change the packages your app service has access to, you must update `requirements.txt`.
 
 ## Help and Bug Reporting
 
@@ -193,7 +188,7 @@ During inference the image data zip file is copied to the IMAGE_DATA_FOLDER in t
 
 [MIT License](LICENSE)
 
-**You are responsible for the performance and any necessary testing or regulatory clearances for any models generated**
+### *You are responsible for the performance and any necessary testing or regulatory clearances for any models generated*
 
 ## Contributing
 
@@ -210,6 +205,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## Disclaimer
+
 The InnerEye-DeepLearning toolkit, InnerEye-Gateway and InnerEye-Inference (collectively the “Research Tools”) are provided AS-IS for use by third parties for the purposes of research, experimental design and testing of machine learning models. The Research Tools are not intended or made available for clinical use as a medical device, clinical support, diagnostic tool, or other technology intended to be used in the diagnosis, cure, mitigation, treatment, or prevention of disease or other conditions. The Research Tools are not designed or intended to be a substitute for professional medical advice, diagnosis, treatment, or judgment and should not be used as such. All users are responsible for reviewing the output of the developed model to determine whether the model meets the user’s needs and for validating and evaluating the model before any clinical use. Microsoft does not warrant that the Research Tools or any materials provided in connection therewith will be sufficient for any medical purposes or meet the health or medical requirements of any person.
 
 ## Microsoft Open Source Code of Conduct
@@ -218,6 +214,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 ## Resources
 
-* [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)
-* [Microsoft Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
-* Contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with questions or concerns
+- [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)
+- [Microsoft Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
+- Contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with questions or concerns

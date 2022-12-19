@@ -1,0 +1,26 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+
+    - name: Azure Login
+      uses: Azure/login@v1
+      with:
+        creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TENANT_ID }}"}'
+
+
+    - name: az deploy
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.42.0
+        inlineScript: |
+          az webapp up --sku S1 --name innereyeinferencedev --subscription "InnerEye Dev" -g InnerEye-Inference --location ukwest --runtime PYTHON:3.7
